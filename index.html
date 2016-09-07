@@ -87,7 +87,7 @@
 <meta name="description" content="追梦赤子心～">
 <meta property="og:type" content="website">
 <meta property="og:title" content="品足论头">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://tongao.org/index.html">
 <meta property="og:site_name" content="品足论头">
 <meta property="og:description" content="追梦赤子心～">
 <meta name="twitter:card" content="summary">
@@ -113,7 +113,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://tongao.org/"/>
 
   <title> 品足论头 </title>
 </head>
@@ -273,6 +273,24 @@
         
           
             <p><img src="/img/ES2015.png" alt=""></p>
+<h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><h2 id="let-局部变量"><a href="#let-局部变量" class="headerlink" title="let (局部变量)"></a>let (局部变量)</h2><p>es2015新增了let命令，用来声明变量。它的使用类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> loading = <span class="string">'...'</span></div></pre></td></tr></table></figure>
+<h2 id="const（恒量）"><a href="#const（恒量）" class="headerlink" title="const（恒量）"></a>const（恒量）</h2><p>const声明一个只读的常量。一旦声明，常量的值就不能改变。<br>注意 const 限制的是给常量分配值这个动作，它并不限制常量里的值；如:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> detail = []</div><div class="line">detail.push(<span class="string">"dist"</span>)</div></pre></td></tr></table></figure></p>
+<h1 id="解构（Destructuring）"><a href="#解构（Destructuring）" class="headerlink" title="解构（Destructuring）"></a>解构（Destructuring）</h1><h2 id="解构数组"><a href="#解构数组" class="headerlink" title="解构数组"></a>解构数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>]</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> [a, b, c] = test()</div><div class="line"><span class="built_in">console</span>.log(a, b, c)</div></pre></td></tr></table></figure>
+<p>上面代码表示，可以从数组中提取值，按照对应位置，对变量赋值。<br>本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。如果解构不成功 a 的值为<code>undefined</code>;<br>解构赋值允许指定默认值。</p>
+<h2 id="结构对象"><a href="#结构对象" class="headerlink" title="结构对象"></a>结构对象</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  retrun &#123; a:<span class="string">'1'</span>, b:<span class="string">'2'</span>, c:<span class="string">'3'</span>&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> &#123; a: a, b: b, c: c &#125; = test()</div></pre></td></tr></table></figure>
+<p>同理解构数组;</p>
+<h1 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h1><h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p>模板字符串（template string）是增强版的字符串，用反引号标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">let result = ['1', '2', '3'];</div><div class="line"></div><div class="line">const tpl = `&lt;ul&gt;</div><div class="line">$&#123;result.map(function(result)&#123;</div><div class="line">  return `&lt;li&gt;$&#123;result&#125;&lt;/li&gt;`</div><div class="line">&#125;).join("")&#125;</div><div class="line">&lt;/ul&gt;`;</div><div class="line"></div><div class="line">console.log(tpl);</div></pre></td></tr></table></figure></p>
+<h2 id="带标签的模板字符串"><a href="#带标签的模板字符串" class="headerlink" title="带标签的模板字符串"></a>带标签的模板字符串</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="string">'1'</span>,</div><div class="line">    b = <span class="string">'2'</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> dist = numbers<span class="string">`这是数字<span class="subst">$&#123;a&#125;</span>和<span class="subst">$&#123;b&#125;</span>`</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">numbers</span>(<span class="params">str, ...val</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(str);</div><div class="line">  <span class="built_in">console</span>.log(val);</div><div class="line"></div><div class="line">  <span class="keyword">let</span> result = <span class="string">''</span>;</div><div class="line"></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; val.length; i++) &#123;</div><div class="line">    result += str[i];</div><div class="line">    result += val[i];</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  result += str[ str.length <span class="number">-1</span> ]</div><div class="line"></div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(dist);</div></pre></td></tr></table></figure>
+<h2 id="判断字符串里是否包含其它的字符串"><a href="#判断字符串里是否包含其它的字符串" class="headerlink" title="判断字符串里是否包含其它的字符串"></a>判断字符串里是否包含其它的字符串</h2><h3 id="includes"><a href="#includes" class="headerlink" title="includes()"></a>includes()</h3><p>判断模板字符串中是否包含某个内容！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="string">'1'</span>,</div><div class="line">    b = <span class="string">'2'</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> dist = <span class="string">`这是数字<span class="subst">$&#123;a&#125;</span>和<span class="subst">$&#123;b&#125;</span>`</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(</div><div class="line">  dist.includes(<span class="string">'数'</span>) <span class="comment">// ture</span></div><div class="line">);</div></pre></td></tr></table></figure></p>
+<h3 id="startsWith"><a href="#startsWith" class="headerlink" title="startsWith()"></a>startsWith()</h3><p>判断模板字符串中开始位置是否包含某个内容<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="string">'1'</span>,</div><div class="line">    b = <span class="string">'2'</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> dist = <span class="string">`这是数字<span class="subst">$&#123;a&#125;</span>和<span class="subst">$&#123;b&#125;</span>`</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(</div><div class="line">  dist.startsWith(<span class="string">'这'</span>) <span class="comment">// true</span></div><div class="line">);</div></pre></td></tr></table></figure></p>
+<h3 id="endsWith"><a href="#endsWith" class="headerlink" title="endsWith()"></a>endsWith()</h3><p>判断模板字符串中结束位置是否包含某个内容<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="string">'1'</span>,</div><div class="line">    b = <span class="string">'2'</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> dist = <span class="string">`这是数字<span class="subst">$&#123;a&#125;</span>和<span class="subst">$&#123;b&#125;</span>`</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(</div><div class="line">  dist.endsWith(<span class="string">'2'</span>) <span class="comment">// true</span></div><div class="line">);</div></pre></td></tr></table></figure></p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">result</span>(<span class="params">a = '1', b = '2'</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;a&#125;</span>, <span class="subst">$&#123;b&#125;</span>`</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(</div><div class="line">  result(),</div><div class="line">  result(<span class="string">'3'</span>, <span class="string">'4'</span>)</div><div class="line">);</div></pre></td></tr></table></figure>
+<h2 id="展开操作符-（Spread）"><a href="#展开操作符-（Spread）" class="headerlink" title="展开操作符 （Spread）"></a>展开操作符 （Spread）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> box1 = [<span class="string">'1'</span>, <span class="string">'2'</span>],</div><div class="line">    box2 = [...box1, <span class="string">'3'</span>];</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(box2);</div><div class="line"><span class="built_in">console</span>.log(...box2);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// log</span></div><div class="line">[ <span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span> ]</div><div class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></div></pre></td></tr></table></figure>
+<h2 id="剩余操作符（Rest）获取函数的多余参数"><a href="#剩余操作符（Rest）获取函数的多余参数" class="headerlink" title="剩余操作符（Rest）获取函数的多余参数"></a>剩余操作符（Rest）获取函数的多余参数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">box</span>(<span class="params">a, b, ...c</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(a, b, c);</div><div class="line">&#125;</div><div class="line"></div><div class="line">box(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">box2</span>(<span class="params">a, b, ...c</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(a, b, ...c);</div><div class="line">&#125;</div><div class="line"></div><div class="line">box2(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</div></pre></td></tr></table></figure>
+<h2 id="解构参数"><a href="#解构参数" class="headerlink" title="解构参数"></a>解构参数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">numbers</span>(<span class="params">a, b, &#123;c, d &#125; = &#123;&#125;</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(a, b, c, d);</div><div class="line">&#125;</div><div class="line">numbers(<span class="number">1</span>, <span class="number">2</span>, &#123;c: <span class="number">3</span>, d:<span class="number">4</span>&#125;)</div></pre></td></tr></table></figure>
+<h2 id="函数名称-name"><a href="#函数名称-name" class="headerlink" title="函数名称(name)"></a>函数名称(name)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> <span class="title">box</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(a.name);</div><div class="line"></div><div class="line"><span class="comment">// box</span></div></pre></td></tr></table></figure>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> box = box =&gt; box;</div><div class="line"></div><div class="line"><span class="keyword">var</span> box = <span class="function"><span class="keyword">function</span> <span class="title">box</span>(<span class="params"> box </span>) </span>&#123;</div><div class="line">  retrun box;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -395,108 +413,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/01/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-01T16:39:35+08:00" content="2016-01-01">
-              2016-01-01
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -538,7 +454,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
