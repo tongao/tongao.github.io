@@ -88,7 +88,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/mystatic/CNode_Vue_Spa/build/";
+/******/ 	__webpack_require__.p = "/cnnode/build/";
 /******/ })
 /************************************************************************/
 /******/ ([]);
