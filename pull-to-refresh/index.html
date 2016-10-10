@@ -93,6 +93,7 @@
     _currentY: 0,
     _startScrollTop: 0,
     _translate: 0,
+    _distMax: 160,
     _scrollEventTarget: null,
     _topStatus: '',
     _direction: '',
@@ -163,7 +164,7 @@
     if ( dist._direction === 'down' && _getScrollTop(dist._scrollEventTarget) === 0 && dist._topStatus !== 'loading') {
       e.preventDefault()
       e.stopPropagation()
-      dist._translate = distance - dist._startScrollTop
+      dist._translate = distance <= dist._distMax ? distance - dist._startScrollTop : dist._translate
       if( dist._translate < 0 ) {
         dist._translate = 0
       }
@@ -210,7 +211,6 @@
 
   function init() {
     dist._scrollEventTarget = _getScrollEventTarget(eleParent)
-
     dist.topStatus = 'pull'
   }
   init()
