@@ -116,6 +116,19 @@
     _setTime(.3)
   }
 
+  //
+  let _getScrollEventTarget = (element) => {
+    let currentNode = element;
+    while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1) {
+      let overflowY = document.defaultView.getComputedStyle(currentNode).overflowY;
+      if (overflowY === 'scroll' || overflowY === 'auto') {
+        return currentNode;
+      }
+      currentNode = currentNode.parentNode;
+    }
+    return window;
+  }
+
   // 获取离顶部的距离
   let _getScrollTop = (element) => {
     if ( element === window ) {
@@ -196,8 +209,8 @@
   eleParent.addEventListener("touchend", _handleTouchEnd, false)
 
   function init() {
-    dist._scrollEventTarget = window
-    // dist._scrollEventTarget = eleParent
+    dist._scrollEventTarget = _getScrollEventTarget(eleParent)
+
     dist.topStatus = 'pull'
   }
   init()
