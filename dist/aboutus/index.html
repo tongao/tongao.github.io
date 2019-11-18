@@ -20,9 +20,9 @@
     <link rel="preload" href="/_nuxt/b951c7656c59c10fd52c.js" as="script" />
     <link rel="preload" href="/_nuxt/90a6213006c3ff4f47b0.js" as="script" />
     <link rel="preload" href="/_nuxt/1689f99cc27246ba37a0.js" as="script" />
-    <link rel="preload" href="/_nuxt/151cb7d53ecdd1ed6195.js" as="script" />
+    <link rel="preload" href="/_nuxt/0cc67afe17e953325ff4.js" as="script" />
     <style
-      data-vue-ssr-id="12ba2d00:0 3191d5ad:0 173cdf58:0 0cb6f612:0 139e72c6:0 77c14196:0"
+      data-vue-ssr-id="12ba2d00:0 3191d5ad:0 173cdf58:0 0cb6f612:0 0bcbb242:0 77c14196:0"
     >
       html {
         -webkit-text-size-adjust: 100%;
@@ -994,67 +994,63 @@
         margin-left: auto;
         padding: 0 10px;
       }
-      .brand[data-v-210453ba] {
-        display: -webkit-box;
-        display: flex;
-        flex-wrap: wrap;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        margin: 20px 0 10px;
+      .about[data-v-7bddde1f] {
+        padding: 20px 0;
       }
-      .brand-item[data-v-210453ba] {
-        overflow: hidden;
-        cursor: pointer;
-        margin-bottom: 10px;
-        flex-basis: 49.6%;
+      .about .title[data-v-7bddde1f] {
+        font-size: 60px;
+        text-align: center;
+        font-weight: 900;
+        margin-bottom: 20px;
       }
-      .brand-item .img[data-v-210453ba] {
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all 0.35s ease-in-out;
-        transition: all 0.35s ease-in-out;
-        -webkit-transform: scale(1);
-        transform: scale(1);
+      .about .isTablet[data-v-7bddde1f] {
+        display: none;
       }
-      .brand-item .img img[data-v-210453ba] {
+      .about .introduction[data-v-7bddde1f] {
+        color: #969696;
+        font-size: 18px;
+      }
+      .about .gallery[data-v-7bddde1f] {
+        margin-top: 20px;
+      }
+      .about .gallery img[data-v-7bddde1f] {
         width: 100%;
       }
-      .brand-item .img[data-v-210453ba]:hover {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+      .about .tcolor[data-v-7bddde1f] {
+        color: #c7a063;
+        margin-top: 40px;
       }
-      .story[data-v-210453ba] {
-        display: -webkit-box;
-        display: flex;
-        flex-wrap: wrap;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        margin-bottom: 10px;
+      .about .dk[data-v-7bddde1f],
+      .about .tcolor[data-v-7bddde1f] {
+        margin-bottom: 40px;
       }
-      .story-item[data-v-210453ba] {
-        overflow: hidden;
-        cursor: pointer;
-        margin-bottom: 5px;
-        flex-basis: 16%;
-      }
-      .story-item .img[data-v-210453ba] {
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all 0.35s ease-in-out;
-        transition: all 0.35s ease-in-out;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-      .story-item .img img[data-v-210453ba] {
+      .about .dk img[data-v-7bddde1f] {
         width: 100%;
       }
-      .story-item .img[data-v-210453ba]:hover {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+      .about .dk-info[data-v-7bddde1f] {
+        color: #969696;
+        font-size: 18px;
+        text-align: center;
+        padding-bottom: 10px;
       }
-      @media (max-width: 779px) {
-        .story-item[data-v-210453ba] {
-          flex-basis: 24.5%;
+      @media (max-width: 780px) {
+        .about .title[data-v-7bddde1f] {
+          font-size: 40px;
+        }
+        .about .isDesktop[data-v-7bddde1f] {
+          display: none;
+        }
+        .about .isTablet[data-v-7bddde1f] {
+          display: block;
+        }
+        .about .dk-info[data-v-7bddde1f],
+        .about .introduction[data-v-7bddde1f] {
+          font-size: 16px;
+        }
+      }
+      @media (max-width: 320px) {
+        .about .title[data-v-7bddde1f] {
+          font-size: 25px;
         }
       }
       .footer[data-v-e38e8d90] {
@@ -1129,10 +1125,12 @@
               </section>
               <nav class="header-nav">
                 <section class="header-nav-warp">
-                  <a href="/" class="nuxt-link-exact-active nuxt-link-active"
-                    >首页</a
+                  <a href="/">首页</a> <span class="line">|</span>
+                  <a
+                    href="/aboutus"
+                    class="nuxt-link-exact-active nuxt-link-active"
+                    >公司介绍</a
                   >
-                  <span class="line">|</span> <a href="/aboutus">公司介绍</a>
                   <span class="line">|</span> <a href="/case/1">案例欣赏</a>
                   <span class="line">|</span> <a href="/team">团队介绍</a>
                   <span class="line">|</span> <a href="/contact">联系我们</a>
@@ -1169,294 +1167,48 @@
             </div>
           </div>
           <main class="main" data-v-599b8d34>
-            <div class="main" data-v-210453ba data-v-599b8d34>
-              <div class="container" data-v-210453ba>
-                <div class="brand" data-v-210453ba>
-                  <div class="brand-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <img src="/images/index/brand1.png" alt data-v-210453ba />
-                    </div>
-                  </div>
-                  <div class="brand-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <img src="/images/index/brand2.png" alt data-v-210453ba />
-                    </div>
-                  </div>
-                  <div class="brand-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <img src="/images/index/brand3.png" alt data-v-210453ba />
-                    </div>
-                  </div>
-                  <div class="brand-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <img src="/images/index/brand4.png" alt data-v-210453ba />
-                    </div>
-                  </div>
-                  <div class="brand-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <img src="/images/index/brand5.png" alt data-v-210453ba />
-                    </div>
-                  </div>
-                  <div class="brand-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <img src="/images/index/brand6.png" alt data-v-210453ba />
-                    </div>
-                  </div>
+            <div class="about" data-v-7bddde1f data-v-599b8d34>
+              <div class="container" data-v-7bddde1f>
+                <h2 class="title isDesktop" data-v-7bddde1f>
+                  信仰专业的力量 品牌源于专业
+                </h2>
+                <h2 class="title isTablet" data-v-7bddde1f>
+                  信仰专业的力量<br data-v-7bddde1f />品牌源于专业
+                </h2>
+                <p class="introduction" data-v-7bddde1f>
+                  DKbrand拥有从策略到设计、再到制作落地的完整产业链，我们的核心服务是通过科学有效的、国际化的设计和品牌管理之道，帮助客户构建卓越的品牌体系，协助更多的中国企业塑造国际化的品牌形象，在世界范围内树立属于中国企业的优秀的品牌形象和人文风格。
+                  我们信仰专业的力量，用优秀的设计帮助客户降低企业运营成本，创造超越竞争对手的品牌竞争力，以深度拓展设计的商业价值，用品牌的力量使客户实现商业目标，用品牌的力量驱动企业的持续发展。
+                </p>
+                <div class="gallery" data-v-7bddde1f>
+                  <img src="/images/aboutus/gallery.png" alt data-v-7bddde1f />
                 </div>
-                <div class="story" data-v-210453ba>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a1.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a2.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a3.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a4.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a5.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a6.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a7.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a8.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a9.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a10.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a11.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a12.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a13.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a14.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a15.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a16.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a17.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a18.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a19.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a20.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a21.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a22.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a23.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a24.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a25.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a26.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a27.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a28.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a29.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a30.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a31.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a32.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a33.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a34.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a35.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="story-item" data-v-210453ba>
-                    <div class="img" data-v-210453ba>
-                      <div class="img" data-v-210453ba>
-                        <img src="/images/index/a36.png" data-v-210453ba />
-                      </div>
-                    </div>
-                  </div>
+                <h2 class="title tcolor" data-v-7bddde1f>
+                  全产业链360°品牌服务
+                </h2>
+                <div class="dk" data-v-7bddde1f>
+                  <img src="/images/aboutus/dk.png" alt data-v-7bddde1f />
                 </div>
+                <p class="dk-info" data-v-7bddde1f>
+                  DKbrand集结了中国颇具实力与创新力的有为之士
+                </p>
+                <p class="dk-info" data-v-7bddde1f>
+                  拥有一个汇聚国内外知名专家学者教授及资深行业经验的视觉设计和品牌咨询精英组成的优秀团队,
+                </p>
+                <p class="dk-info" data-v-7bddde1f>
+                  有效的确保我们的设计和品牌管理理念与国际领先水平保持同步。
+                </p>
+                <p class="dk-info" data-v-7bddde1f>
+                  DKbrand拥有国际联盟合作伙伴组成的全球跨领域合作网络，
+                </p>
+                <p class="dk-info" data-v-7bddde1f>
+                  全面覆盖从品牌研究、视觉设计、产品造型到空间规划的顶尖力量，
+                </p>
+                <p class="dk-info" data-v-7bddde1f>
+                  强强联手，为客户创造世界领先的品牌价值。
+                </p>
+                <p class="dk-info" data-v-7bddde1f>
+                  同时，欢迎热爱设计的朋友们加盟DKbrand，共同实现人生价值，为中国设计的发展作出我们的贡献。
+                </p>
               </div>
             </div>
           </main>
@@ -1509,7 +1261,7 @@
         serverRendered: !0
       }</script
     ><script src="/_nuxt/8dae56a8030c66e4b7c9.js" defer></script
-    ><script src="/_nuxt/151cb7d53ecdd1ed6195.js" defer></script
+    ><script src="/_nuxt/0cc67afe17e953325ff4.js" defer></script
     ><script src="/_nuxt/b951c7656c59c10fd52c.js" defer></script
     ><script src="/_nuxt/90a6213006c3ff4f47b0.js" defer></script
     ><script src="/_nuxt/1689f99cc27246ba37a0.js" defer></script>

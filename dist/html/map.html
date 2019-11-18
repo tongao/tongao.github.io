@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: '微软雅黑';
+      }
+      #allmap {
+        width: 100%;
+        height: 500px;
+      }
+      p {
+        margin-left: 5px;
+        font-size: 12px;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="http://api.map.baidu.com/api?v=2.0&ak=Du1j07dkxWPMffy2aeX9Fov6H2tlRskI"
+    ></script>
+    <title>map</title>
+  </head>
+  <body>
+    <div id="allmap"></div>
+  </body>
+</html>
+<script type="text/javascript">
+  // 百度地图API功能
+  var map = new BMap.Map('allmap')
+  var point = new BMap.Point(121.61591, 31.190342)
+  var marker = new BMap.Marker(point) // 创建标注
+  map.addOverlay(marker) // 将标注添加到地图中
+  map.centerAndZoom(point, 18)
+  var content =
+    '<div style="margin:0;line-height:20px;padding:2px;">' +
+    '<p style="font-size:14px">上海爱达品智人工智能科技有限公司</p>' +
+    '<p>地址：中国(上海)自由贸易试验区川和路55弄20号 </p>' +
+    '</div>'
+  var opts = {
+    width: 280, // 信息窗口宽度
+    height: 80 // 信息窗口高度
+  }
+  var infoWindow = new BMap.InfoWindow(content, opts) // 创建信息窗口对象
+  map.openInfoWindow(infoWindow, point) //开启信息窗口
+  map.enableScrollWheelZoom(true)
+  marker.addEventListener('click', function(e) {
+    map.openInfoWindow(infoWindow, point) //开启信息窗口
+  })
+</script>
