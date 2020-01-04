@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title></title>
+    <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+      text-align: center;
+    }
+    .cont {
+      height: 400px;
+      overflow: scroll;
+    }
+    .cont-overflow {
+      overflow: hidden;
+    }
+    .loading {
+      padding: 10px;
+      background-color: #333;
+      text-align: center;
+      margin-top: -36px
+    }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="cont-overflow">
+        <div class="cont-item">
+          <div class="loading">下拉刷新中。。。。。</div>
+          <ul>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+            <li><span>看啊啊啊呀工夺村顶起村顶起</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+  let cont = document.querySelector('.cont')
+  let eleParent = document.querySelector('.cont-overflow')
+  let ele = document.querySelector('.cont-item')
+  // 设置页面高度
+  cont.style.height = document.documentElement.clientHeight - eleParent.getBoundingClientRect().top + 'px';
+  let dist = {
+    _startY: 0,
+    _currentY: 0,
+    _startScrollTop: 0,
+    _translate: 0,
+    _distMax: 160,
+    _scrollEventTarget: null,
+    _topStatus: '',
+    _direction: '',
+    _topDropped: false
+  }
+
+  // 设置容器样式
+  let _setConentStyle = (diff) => {
+    ele.style.transform = 'translate3d(0, '+diff+'px, 0)'
+  }
+  // 设置效果时间
+  let _setTime = (time) => {
+    ele.style.transition = 'all '+ time +'s';
+  }
+  // 返回顶部
+  let _back = () => {
+
+    dist._translate = 0
+    _setConentStyle(dist._translate)
+    dist._topStatus = 'pull'
+    _setTime(.3)
+  }
+
+  //
+  let _getScrollEventTarget = (element) => {
+    let currentNode = element;
+    while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1) {
+      let overflowY = document.defaultView.getComputedStyle(currentNode).overflowY;
+      if (overflowY === 'scroll' || overflowY === 'auto') {
+        return currentNode;
+      }
+      currentNode = currentNode.parentNode;
+    }
+    return window;
+  }
+
+  // 获取离顶部的距离
+  let _getScrollTop = (element) => {
+    if ( element === window ) {
+      return Math.max(window.pageYOffset || 0, document.documentElement.scrollTop)
+    } else {
+      return element.scrollTop
+    }
+  }
+  // 按下开始
+  let _handleTouchStart = (e) => {
+
+    dist._startY = e.touches[0].clientY
+    dist._startScrollTop = _getScrollTop(dist._scrollEventTarget)
+
+    if (dist._topStatus !== 'loading') {
+      dist._topStatus = 'pull'
+      dist._topDropped = false
+    }
+  }
+
+  // 滑动中
+  let _handleTouchMove = (e) => {
+    if ( dist._startY < ele.getBoundingClientRect().top && dist._startY > ele.getBoundingClientRect().bottom) {
+      return
+    }
+    dist._currentY = e.touches[0].clientY
+    // distance
+    let distance = dist._currentY - dist._startY
+
+    dist._direction = distance > 0 ? 'down' : 'up';
+
+    if ( dist._direction === 'down' && _getScrollTop(dist._scrollEventTarget) === 0 && dist._topStatus !== 'loading') {
+      e.preventDefault()
+      e.stopPropagation()
+      dist._translate = distance <= dist._distMax ? distance - dist._startScrollTop : dist._translate
+      if( dist._translate < 0 ) {
+        dist._translate = 0
+      }
+      // 设置样式
+      _setConentStyle(dist._translate)
+      _setTime(0)
+      dist._topStatus = dist._translate >= 70 ? 'drop' : 'pull'
+    }
+  }
+
+  // 滑动结束
+  let _handleTouchEnd = (e) => {
+
+    if ( _getScrollTop(dist._scrollEventTarget) ===0 && dist._translate > 0) {
+
+      dist._topDropped = true
+
+      if ( dist._topStatus == 'drop') {
+
+        dist._translate = 50
+
+        _setConentStyle(dist._translate)
+
+        _setTime(.3)
+
+        dist._topStatus = 'loading'
+
+        setTimeout( () => {
+            _back()
+            console.log(333333333)
+        }, 2000)
+      } else {
+
+        _back()
+
+      }
+    }
+  }
+
+  // 事件开始
+  eleParent.addEventListener("touchstart", _handleTouchStart, false)
+  eleParent.addEventListener("touchmove", _handleTouchMove, false)
+  eleParent.addEventListener("touchend", _handleTouchEnd, false)
+
+  function init() {
+    dist._scrollEventTarget = _getScrollEventTarget(eleParent)
+    dist.topStatus = 'drop'
+  }
+  init()
+  </script>
+</html>
